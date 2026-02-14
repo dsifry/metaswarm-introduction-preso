@@ -1,0 +1,471 @@
+/* ==========================================================================
+   metaswarm presentation — custom dark theme with amber accent
+   Overrides Reveal.js black theme defaults
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Root variables
+   -------------------------------------------------------------------------- */
+:root {
+  --bg: #1a1a2e;
+  --bg-light: #252547;
+  --text: #e0e0e0;
+  --heading: #ffffff;
+  --accent: #f0b429;
+  --accent-dim: rgba(240, 180, 41, 0.15);
+  --accent-glow: rgba(240, 180, 41, 0.35);
+  --border: rgba(255, 255, 255, 0.08);
+  --shadow: rgba(0, 0, 0, 0.35);
+  --radius: 8px;
+  --transition: 0.3s ease;
+}
+
+/* --------------------------------------------------------------------------
+   2. Global overrides
+   -------------------------------------------------------------------------- */
+.reveal-viewport {
+  background: var(--bg);
+}
+
+.reveal {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.reveal .slides {
+  text-align: left;
+}
+
+.reveal .slides section {
+  padding: 40px 60px;
+}
+
+/* --------------------------------------------------------------------------
+   3. Typography
+   -------------------------------------------------------------------------- */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+  font-family: 'Inter', sans-serif;
+  color: var(--heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  line-height: 1.15;
+  margin-bottom: 0.6em;
+}
+
+.reveal h1 {
+  font-size: 3.2em;
+  font-weight: 700;
+}
+
+.reveal h2 {
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+.reveal h3 {
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.reveal p {
+  line-height: 1.6;
+  margin-bottom: 0.8em;
+}
+
+.reveal strong {
+  color: var(--heading);
+  font-weight: 600;
+}
+
+.reveal em {
+  color: var(--accent);
+  font-style: normal;
+}
+
+/* --------------------------------------------------------------------------
+   4. Links
+   -------------------------------------------------------------------------- */
+.reveal a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.reveal a:hover {
+  color: #f5c842;
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   5. Code blocks
+   -------------------------------------------------------------------------- */
+.reveal pre {
+  background: var(--bg-light);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px var(--shadow);
+  padding: 1em 1.2em;
+  font-size: 0.55em;
+  width: 100%;
+  margin: 1em auto;
+  border: 1px solid var(--border);
+}
+
+.reveal pre code {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Menlo', monospace;
+  line-height: 1.5;
+  padding: 0;
+  max-height: 520px;
+}
+
+.reveal code {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Menlo', monospace;
+  background: var(--bg-light);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* --------------------------------------------------------------------------
+   6. Fragment animations — clean fades only
+   -------------------------------------------------------------------------- */
+.reveal .fragment {
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.reveal .fragment.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal .fragment.fade-up {
+  transform: translateY(20px);
+}
+
+.reveal .fragment.fade-up.visible {
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   7. Utility classes
+   -------------------------------------------------------------------------- */
+
+/* Accent color text */
+.accent {
+  color: var(--accent);
+}
+
+/* Accent background pill / badge */
+.accent-bg {
+  background: var(--accent);
+  color: #1a1a2e;
+  padding: 0.15em 0.5em;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* Large stat number */
+.stat-number {
+  font-size: 4em;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+/* Small caption text */
+.small-text {
+  font-size: 0.6em;
+  color: rgba(224, 224, 224, 0.6);
+  font-weight: 300;
+}
+
+/* --------------------------------------------------------------------------
+   8. Terminal block
+   -------------------------------------------------------------------------- */
+.terminal-block {
+  background: #0d0d1a;
+  border-radius: 10px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 8px 30px var(--shadow);
+  border: 1px solid var(--border);
+  margin: 1em 0;
+}
+
+.terminal-block .terminal-header {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.terminal-block .terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.terminal-block .terminal-dot.red    { background: #ff5f57; }
+.terminal-block .terminal-dot.yellow { background: #febc2e; }
+.terminal-block .terminal-dot.green  { background: #28c840; }
+
+.terminal-block .terminal-body {
+  padding: 1em 1.4em;
+  font-family: 'JetBrains Mono', 'Menlo', monospace;
+  font-size: 0.52em;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+/* --------------------------------------------------------------------------
+   9. Flow diagram (pipeline visualization)
+   -------------------------------------------------------------------------- */
+.flow-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+  margin: 1.5em 0;
+}
+
+.flow-step {
+  background: transparent;
+  border: 2px solid var(--border);
+  border-radius: 100px;
+  padding: 0.35em 1em;
+  font-size: 0.65em;
+  font-weight: 500;
+  color: var(--text);
+  white-space: nowrap;
+  transition: all var(--transition);
+  position: relative;
+}
+
+.flow-step + .flow-step::before {
+  content: '\2192'; /* right arrow */
+  position: relative;
+  margin: 0 0.4em;
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 1.2em;
+}
+
+/* Wrap: use a container so arrow sits between steps */
+.flow-arrow {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.75em;
+  margin: 0 0.3em;
+}
+
+.flow-step.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 18px var(--accent-glow);
+}
+
+/* --------------------------------------------------------------------------
+   10. Two-column layout
+   -------------------------------------------------------------------------- */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+  align-items: start;
+  margin: 1em 0;
+}
+
+/* --------------------------------------------------------------------------
+   11. Card grid
+   -------------------------------------------------------------------------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1em;
+  margin: 1em 0;
+}
+
+.card {
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.2em;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+  border-color: rgba(240, 180, 41, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card h3 {
+  font-size: 0.85em;
+  margin-bottom: 0.3em;
+}
+
+.card p {
+  font-size: 0.6em;
+  color: rgba(224, 224, 224, 0.7);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   12. Checklist
+   -------------------------------------------------------------------------- */
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 1em 0;
+}
+
+.checklist li {
+  position: relative;
+  padding-left: 1.6em;
+  margin-bottom: 0.6em;
+  font-size: 0.8em;
+  line-height: 1.5;
+}
+
+.checklist li::before {
+  content: '\2713'; /* checkmark */
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+/* --------------------------------------------------------------------------
+   13. Knowledge entry (JSONL-like)
+   -------------------------------------------------------------------------- */
+.knowledge-entry {
+  background: var(--bg-light);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 0.8em 1.2em;
+  margin: 0.8em 0;
+  font-family: 'JetBrains Mono', 'Menlo', monospace;
+  font-size: 0.52em;
+  line-height: 1.6;
+  color: var(--text);
+  overflow-x: auto;
+}
+
+.knowledge-entry .key {
+  color: var(--accent);
+}
+
+.knowledge-entry .string {
+  color: #8be9fd;
+}
+
+.knowledge-entry .number {
+  color: #bd93f9;
+}
+
+/* --------------------------------------------------------------------------
+   14. GitHub contribution graph placeholder
+   -------------------------------------------------------------------------- */
+.contrib-graph {
+  display: grid;
+  grid-template-columns: repeat(52, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  gap: 3px;
+  max-width: 780px;
+  margin: 0 auto;
+  grid-auto-flow: column;
+}
+
+.contrib-graph .day {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 2px;
+  background: var(--accent);
+  opacity: 0.06;
+}
+
+/* Intensity levels */
+.contrib-graph .day.l1 { opacity: 0.15; }
+.contrib-graph .day.l2 { opacity: 0.30; }
+.contrib-graph .day.l3 { opacity: 0.50; }
+.contrib-graph .day.l4 { opacity: 0.75; }
+.contrib-graph .day.l5 { opacity: 1.00; }
+
+/* --------------------------------------------------------------------------
+   15. Slide-level polish
+   -------------------------------------------------------------------------- */
+
+/* Progress bar */
+.reveal .progress {
+  color: var(--accent);
+  height: 3px;
+}
+
+/* Controls */
+.reveal .controls {
+  color: var(--accent);
+}
+
+/* Slide number */
+.reveal .slide-number {
+  color: rgba(224, 224, 224, 0.35);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+}
+
+/* Vertical centering helper */
+.reveal .slides section.center-v {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100%;
+}
+
+/* Title slide — centered text */
+.reveal .slides section.title-slide {
+  text-align: center;
+}
+
+/* Selection color */
+.reveal ::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Blockquote */
+.reveal blockquote {
+  background: var(--bg-light);
+  border-left: 4px solid var(--accent);
+  padding: 1em 1.5em;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-style: normal;
+  width: 90%;
+  margin: 1em auto;
+  box-shadow: none;
+}
+
+/* Lists */
+.reveal ul,
+.reveal ol {
+  margin-left: 0.5em;
+}
+
+.reveal li {
+  margin-bottom: 0.4em;
+  line-height: 1.5;
+}
+
+/* Separator */
+.reveal hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1.5em 0;
+}
