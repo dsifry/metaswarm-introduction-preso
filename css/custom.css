@@ -365,7 +365,7 @@
    -------------------------------------------------------------------------- */
 .contrib-graph {
   display: grid;
-  grid-template-columns: repeat(52, 1fr);
+  grid-template-columns: repeat(53, 1fr);
   grid-template-rows: repeat(7, 1fr);
   gap: 3px;
   max-width: 780px;
@@ -373,20 +373,45 @@
   grid-auto-flow: column;
 }
 
+/* GitHub-standard contribution graph cells — colors applied inline via style attr */
 .contrib-graph .day {
   width: 100%;
   aspect-ratio: 1;
   border-radius: 2px;
-  background: var(--accent);
-  opacity: 0.06;
+  position: relative;
+  cursor: pointer;
 }
 
-/* Intensity levels */
-.contrib-graph .day.l1 { opacity: 0.15; }
-.contrib-graph .day.l2 { opacity: 0.30; }
-.contrib-graph .day.l3 { opacity: 0.50; }
-.contrib-graph .day.l4 { opacity: 0.75; }
-.contrib-graph .day.l5 { opacity: 1.00; }
+/* Tooltip on hover */
+.contrib-graph .day:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #24292f;
+  color: #ffffff;
+  font-size: 11px;
+  font-family: -apple-system, sans-serif;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.contrib-graph .day:hover::before {
+  content: '';
+  position: absolute;
+  bottom: calc(100% + 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid transparent;
+  border-top-color: #24292f;
+  pointer-events: none;
+  z-index: 100;
+}
 
 /* --------------------------------------------------------------------------
    15. Slide-level polish
