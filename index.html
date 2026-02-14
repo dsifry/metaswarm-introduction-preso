@@ -313,6 +313,146 @@
         </aside>
       </section>
 
+      <!-- ================================================================
+           ACT III — Let's Build Together
+           ================================================================ -->
+
+      <!-- Slide 11: Prerequisites -->
+      <section>
+        <h2>Prerequisites</h2>
+        <ul class="prereq-list">
+          <li class="fragment">Claude Code installed</li>
+          <li class="fragment">Node.js 18+ &nbsp;<code>node --version</code></li>
+          <li class="fragment">GitHub CLI &nbsp;<code>gh --version</code></li>
+          <li class="fragment">A project &mdash; new or existing</li>
+        </ul>
+        <aside class="notes">
+          Quick check — raise your hand if you have Claude Code installed. Great. Node.js? GitHub CLI? If you're missing anything, that's okay — pair up with someone who has it all set up.
+        </aside>
+      </section>
+
+      <!-- Slide 12: The Friendliest Install -->
+      <section>
+        <h2>The Friendliest Install</h2>
+        <div class="terminal-block">
+          <div class="terminal-header">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+          </div>
+          <div class="terminal-body">
+            <span class="command">$ claude</span>
+            <span class="claude-prompt"><br>&gt; Read through https://github.com/dsifry/metaswarm and<br>&nbsp; install it for my project.</span>
+          </div>
+        </div>
+        <div style="margin-top: 0.8em;">
+          <span class="output-line fragment claude-action">Reading metaswarm documentation&hellip;</span>
+          <span class="output-line fragment claude-action">Analyzing your project structure&hellip;</span>
+          <span class="output-line fragment claude-action">Scaffolding agents, skills, and commands&hellip;</span>
+          <span class="output-line fragment claude-action claude-done"><span class="accent">&#10003;</span> metaswarm configured for your project</span>
+        </div>
+        <p class="fragment" style="text-align: center; font-size: 0.65em; color: rgba(224, 224, 224, 0.55); margin-top: 1.2em; font-style: italic;">Just tell Claude what you want.</p>
+        <aside class="notes">
+          This is the key insight. You don't need to memorize commands. Open Claude Code in your project and just tell it to read the metaswarm repo and set it up. It will read the documentation, understand your project structure, and adapt the scaffold to your stack.
+        </aside>
+      </section>
+
+      <!-- Slide 13: What Claude Set Up -->
+      <section>
+        <h2>What Claude Set Up</h2>
+        <div class="terminal-block">
+          <div class="terminal-header">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+          </div>
+          <div class="terminal-body">
+            <span class="tree-line">your-project/</span>
+            <span class="tree-line">&boxvr;&boxh;&boxh; CLAUDE.md              <span class="accent">&larr; project instructions</span></span>
+            <span class="tree-line">&boxvr;&boxh;&boxh; .claude/</span>
+            <span class="tree-line">&boxv;   &boxvr;&boxh;&boxh; agents/            <span class="accent">&larr; 18 specialized agents</span></span>
+            <span class="tree-line">&boxv;   &boxvr;&boxh;&boxh; skills/            <span class="accent">&larr; 9 workflow skills</span></span>
+            <span class="tree-line">&boxv;   &boxvr;&boxh;&boxh; commands/          <span class="accent">&larr; 7 slash commands</span></span>
+            <span class="tree-line">&boxv;   &boxur;&boxh;&boxh; rubrics/           <span class="accent">&larr; 6 review rubrics</span></span>
+            <span class="tree-line">&boxvr;&boxh;&boxh; knowledge/             <span class="accent">&larr; git-native knowledge base</span></span>
+            <span class="tree-line">&boxv;   &boxvr;&boxh;&boxh; patterns.jsonl</span>
+            <span class="tree-line">&boxv;   &boxvr;&boxh;&boxh; gotchas.jsonl</span>
+            <span class="tree-line">&boxv;   &boxur;&boxh;&boxh; decisions.jsonl</span>
+            <span class="tree-line">&boxur;&boxh;&boxh; .coverage-thresholds.json</span>
+          </div>
+        </div>
+        <aside class="notes">
+          Claude read your project, understood its structure, and set up metaswarm tailored to it. The CLAUDE.md file is the entry point — it tells Claude Code about your project and references all the agents and skills.
+        </aside>
+      </section>
+
+      <!-- Slide 14: Your First Task -->
+      <section>
+        <h2>Your First Task</h2>
+        <div style="margin: 1.5em 0;">
+          <p class="fragment" style="font-size: 0.9em; margin-bottom: 1em;">
+            <span class="accent" style="font-weight: 600;">Step 1:</span> Create a GitHub issue describing a small feature
+          </p>
+          <div class="fragment">
+            <p style="font-size: 0.9em; margin-bottom: 0.6em;">
+              <span class="accent" style="font-weight: 600;">Step 2:</span> Run it
+            </p>
+            <div class="terminal-block">
+              <div class="terminal-header">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+              </div>
+              <div class="terminal-body">
+                <span class="command">/project:start-task &lt;issue-number&gt;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="fragment" style="font-size: 0.6em; color: rgba(224, 224, 224, 0.55); font-style: italic;">Pick something small &mdash; a new endpoint, a UI component, a bug fix.</p>
+        <aside class="notes">
+          Pick something small for your first run. A new endpoint, a UI component, a bug fix. Create a GitHub issue for it — just a few sentences describing what you want. Then use the start-task command and watch what happens.
+        </aside>
+      </section>
+
+      <!-- Slide 15: Watch the Workflow -->
+      <section>
+        <h2>Watch the Workflow</h2>
+        <div class="workflow-sequence">
+          <div class="workflow-step fragment">
+            <span class="workflow-agent">Researcher</span> explores codebase
+          </div>
+          <div class="workflow-step fragment">
+            <span class="workflow-agent">Architect</span> creates plan
+          </div>
+          <div class="workflow-step fragment">
+            <span class="workflow-agent">Reviewers</span> validate plan
+          </div>
+          <div class="workflow-step fragment">
+            <span class="workflow-agent">Coder</span> implements with TDD
+          </div>
+          <div class="workflow-step fragment">
+            <span class="workflow-agent">PR</span> gets created
+          </div>
+          <div class="workflow-step fragment">
+            <span class="workflow-agent">Shepherd</span> monitors to merge
+          </div>
+        </div>
+        <aside class="notes">
+          Now watch. The researcher explores your codebase first. The architect creates a structured plan. Reviewers validate it — both the plan review gate and the design review gate. Then the coder implements using TDD with adversarial review. A PR gets created automatically. And the PR shepherd monitors it all the way to merge.
+        </aside>
+      </section>
+
+      <!-- Slide 16: Resources & Q&A -->
+      <section class="title-slide">
+        <p style="font-size: 1.2em; color: var(--accent); font-family: 'JetBrains Mono', 'Menlo', monospace; font-weight: 600; margin-bottom: 0.3em;">github.com/dsifry/metaswarm</p>
+        <p style="font-size: 0.8em; color: rgba(224, 224, 224, 0.6);">Star it. Clone it. File issues.</p>
+        <p style="font-size: 2.2em; font-weight: 700; color: var(--heading); margin-top: 1.2em;">Questions?</p>
+        <aside class="notes">
+          The repo is open source, MIT licensed. Star it, clone it, file issues. I'm happy to take questions — about the tool, the workflow, how I use it day to day, anything.
+        </aside>
+      </section>
+
     </div><!-- /.slides -->
   </div><!-- /.reveal -->
 
