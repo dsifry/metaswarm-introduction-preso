@@ -250,13 +250,7 @@
   position: relative;
 }
 
-.flow-step + .flow-step::before {
-  content: '\2192'; /* right arrow */
-  position: relative;
-  margin: 0 0.4em;
-  color: rgba(255, 255, 255, 0.25);
-  font-size: 1.2em;
-}
+/* Arrow between steps is handled by .flow-arrow elements */
 
 /* Wrap: use a container so arrow sits between steps */
 .flow-arrow {
@@ -481,7 +475,7 @@
   color: rgba(224, 224, 224, 0.9);
 }
 
-.terminal-body .output-line {
+.output-line {
   display: block;
   margin: 0.15em 0;
 }
