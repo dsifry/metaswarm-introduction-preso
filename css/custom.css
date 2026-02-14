@@ -34,12 +34,8 @@
   color: var(--text);
 }
 
-.reveal .slides {
-  text-align: left;
-}
-
 .reveal .slides section {
-  padding: 40px 60px;
+  text-align: left;
 }
 
 /* --------------------------------------------------------------------------
