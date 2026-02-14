@@ -469,3 +469,103 @@
   border-top: 1px solid var(--border);
   margin: 1.5em 0;
 }
+
+/* --------------------------------------------------------------------------
+   16. Terminal accent text (amber checkmarks in terminal output)
+   -------------------------------------------------------------------------- */
+.terminal-body .accent {
+  color: var(--accent);
+}
+
+.terminal-body .command {
+  color: rgba(224, 224, 224, 0.9);
+}
+
+.terminal-body .output-line {
+  display: block;
+  margin: 0.15em 0;
+}
+
+.terminal-body .final-line {
+  display: block;
+  margin-top: 0.6em;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   17. Verification comparison blocks (slide 8)
+   -------------------------------------------------------------------------- */
+.verify-block {
+  border-radius: var(--radius);
+  padding: 1.4em 1.6em;
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.verify-block .verify-label {
+  font-size: 0.55em;
+  color: rgba(224, 224, 224, 0.5);
+  margin-bottom: 0.6em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.verify-block .verify-claim {
+  font-size: 0.85em;
+  font-weight: 600;
+  color: var(--heading);
+  margin-bottom: 0.5em;
+}
+
+.verify-block .verify-icon {
+  font-size: 1.8em;
+  line-height: 1;
+}
+
+.verify-bad {
+  background: rgba(255, 80, 80, 0.06);
+  border-color: rgba(255, 80, 80, 0.15);
+}
+
+.verify-bad .verify-icon {
+  color: #e05555;
+}
+
+.verify-bad .verify-claim {
+  text-decoration: line-through;
+  text-decoration-color: rgba(224, 80, 80, 0.5);
+}
+
+.verify-good {
+  background: rgba(40, 200, 64, 0.06);
+  border-color: rgba(40, 200, 64, 0.15);
+}
+
+.verify-good .verify-icon {
+  color: #28c840;
+}
+
+/* --------------------------------------------------------------------------
+   18. Flow diagram fragment support
+   -------------------------------------------------------------------------- */
+.flow-diagram .flow-step.fragment {
+  display: inline-block;
+}
+
+.flow-diagram .flow-arrow.fragment {
+  display: inline-block;
+}
+
+/* Ensure flow items wrap nicely */
+.flow-diagram {
+  row-gap: 0.6em;
+}
+
+.flow-note {
+  text-align: center;
+  font-size: 0.6em;
+  color: rgba(224, 224, 224, 0.55);
+  margin-top: 1.2em;
+  font-style: italic;
+}

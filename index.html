@@ -179,6 +179,140 @@
         </aside>
       </section>
 
+      <!-- ================================================================
+           ACT II — Show, Don't Tell
+           ================================================================ -->
+
+      <!-- Slide 5: One Command -->
+      <section>
+        <div class="terminal-block">
+          <div class="terminal-header">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+          </div>
+          <div class="terminal-body">
+            <span class="command">$ npx metaswarm init</span>
+            <span class="output-line fragment"><span class="accent">&#10003;</span> Created CLAUDE.md</span>
+            <span class="output-line fragment"><span class="accent">&#10003;</span> Created .coverage-thresholds.json</span>
+            <span class="output-line fragment"><span class="accent">&#10003;</span> Scaffolded 18 agents</span>
+            <span class="output-line fragment"><span class="accent">&#10003;</span> Scaffolded 9 skills</span>
+            <span class="output-line fragment"><span class="accent">&#10003;</span> Scaffolded 7 commands</span>
+            <span class="output-line fragment"><span class="accent">&#10003;</span> Scaffolded 6 rubrics</span>
+            <span class="output-line fragment"><span class="accent">&#10003;</span> Scaffolded 6 guides</span>
+            <span class="output-line fragment"><span class="accent">&#10003;</span> Created knowledge base templates</span>
+            <span class="final-line fragment">metaswarm is ready.</span>
+          </div>
+        </div>
+        <aside class="notes">
+          One command. That's it. Let me show you what it creates.
+        </aside>
+      </section>
+
+      <!-- Slide 6: What You Get -->
+      <section>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Agents <span class="accent">(18)</span></h3>
+            <p>Researcher, Architect, Coder, Reviewer, Security Auditor, PR Shepherd...</p>
+          </div>
+          <div class="card">
+            <h3>Skills <span class="accent">(9)</span></h3>
+            <p>Orchestrated Execution, Design Review Gate, Plan Review, PR Shepherd...</p>
+          </div>
+          <div class="card">
+            <h3>Commands <span class="accent">(7)</span></h3>
+            <p>start-task, review-design, pr-shepherd, prime, self-reflect...</p>
+          </div>
+          <div class="card">
+            <h3>Knowledge</h3>
+            <p>Patterns, gotchas, decisions, anti-patterns &mdash; grows with every PR</p>
+          </div>
+        </div>
+        <aside class="notes">
+          Agents are specialized roles. Skills are workflows that coordinate agents. Commands are how you interact. And the knowledge base is how the system gets smarter over time.
+        </aside>
+      </section>
+
+      <!-- Slide 7: The Workflow -->
+      <section>
+        <div class="flow-diagram">
+          <span class="flow-step fragment">Research</span>
+          <span class="flow-arrow fragment">&rarr;</span>
+          <span class="flow-step fragment">Plan</span>
+          <span class="flow-arrow fragment">&rarr;</span>
+          <span class="flow-step fragment">Plan Review</span>
+          <span class="flow-arrow fragment">&rarr;</span>
+          <span class="flow-step fragment">Design Review</span>
+          <span class="flow-arrow fragment">&rarr;</span>
+          <span class="flow-step fragment">Decompose</span>
+          <span class="flow-arrow fragment">&rarr;</span>
+          <span class="flow-step fragment active">Execute</span>
+          <span class="flow-arrow fragment">&rarr;</span>
+          <span class="flow-step fragment">Final Review</span>
+          <span class="flow-arrow fragment">&rarr;</span>
+          <span class="flow-step fragment">PR</span>
+          <span class="flow-arrow fragment">&rarr;</span>
+          <span class="flow-step fragment">Shepherd</span>
+        </div>
+        <p class="flow-note fragment">Each phase has quality gates &mdash; the system won&rsquo;t let you skip steps.</p>
+        <aside class="notes">
+          Every task follows this pipeline. The key is that each phase has quality gates built in. You can't skip from plan to code without design review. You can't merge without passing adversarial review.
+        </aside>
+      </section>
+
+      <!-- Slide 8: Trust Nothing, Verify Everything -->
+      <section>
+        <h2>Trust Nothing, Verify Everything</h2>
+        <div class="two-col">
+          <div class="verify-block verify-bad">
+            <p class="verify-label">Agent reports:</p>
+            <p class="verify-claim">&ldquo;All tests pass &check;&rdquo;</p>
+            <div class="verify-icon">&times;</div>
+          </div>
+          <div class="verify-block verify-good">
+            <p class="verify-label">Orchestrator verifies:</p>
+            <p class="verify-claim">Runs tests independently</p>
+            <div class="verify-icon">&check;</div>
+          </div>
+        </div>
+        <p style="text-align: center; font-size: 0.7em; color: rgba(224, 224, 224, 0.6); margin-top: 1em;">
+          The orchestrator never trusts self-reports. It verifies by running tests itself.
+        </p>
+        <aside class="notes">
+          This is the core philosophy. When a coding agent says 'tests pass', the orchestrator doesn't take its word for it. It runs the tests itself. It's like having a QA team that independently verifies everything.
+        </aside>
+      </section>
+
+      <!-- Slide 9: It Learns -->
+      <section>
+        <h2>It learns.</h2>
+        <div class="knowledge-entry fragment">
+          { <span class="key">"type"</span>: <span class="string">"pattern"</span>, <span class="key">"fact"</span>: <span class="string">"Always mock external APIs in tests"</span> }
+        </div>
+        <div class="knowledge-entry fragment">
+          { <span class="key">"type"</span>: <span class="string">"gotcha"</span>, <span class="key">"fact"</span>: <span class="string">"This API returns 200 even on errors"</span> }
+        </div>
+        <div class="knowledge-entry fragment">
+          { <span class="key">"type"</span>: <span class="string">"decision"</span>, <span class="key">"fact"</span>: <span class="string">"Use repository pattern for data access"</span> }
+        </div>
+        <p class="fragment" style="text-align: center; font-size: 0.65em; color: rgba(224, 224, 224, 0.55); margin-top: 1.2em;">
+          Every PR teaches the system something new. Git-native, version-controlled.
+        </p>
+        <aside class="notes">
+          The knowledge base lives in git as JSONL files. Agents prime from it before each task. So that gotcha you hit last week? The agents already know about it.
+        </aside>
+      </section>
+
+      <!-- Slide 10: Transition to Hands-On -->
+      <section class="title-slide">
+        <p style="font-size: 1.8em; font-weight: 600; color: var(--heading);">Let&rsquo;s build something together.</p>
+        <p style="font-size: 1em; color: rgba(224, 224, 224, 0.6); margin-top: 0.5em;">Open your laptops.</p>
+        <aside class="notes">
+          Okay, enough slides. Let's actually do this. If you have Claude Code and a project, you're about to see what this can do.
+        </aside>
+      </section>
+
     </div><!-- /.slides -->
   </div><!-- /.reveal -->
 
