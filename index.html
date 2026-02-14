@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>metaswarm — Quality at Speed</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Reveal.js 5.2.1 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/theme/black.css" id="theme">
+
+  <!-- Syntax highlighting -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/highlight/monokai.css">
+
+  <!-- Custom theme (loaded last to override) -->
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- ================================================================
+           ACT I — The Hook
+           ================================================================ -->
+
+      <!-- Slide 1: Title -->
+      <section class="title-slide">
+        <h1>metaswarm</h1>
+        <p class="accent" style="font-size: 1.5em; font-weight: 300;">Quality at Speed</p>
+        <p class="small-text" style="margin-top: 2em;">Dave Sifry</p>
+        <aside class="notes">
+          Welcome everyone. I'm Dave Sifry. I want to show you something that's changed how I build software.
+        </aside>
+      </section>
+
+      <!-- Slide 2: The Problem -->
+      <section>
+        <h2>Moving fast usually means<br>cutting corners.</h2>
+        <p class="fragment" style="margin-top: 1.5em; font-size: 1.2em;">
+          What if your tools <span class="accent">enforced quality automatically?</span>
+        </p>
+        <aside class="notes">
+          As founders, we're always under pressure to ship. But every shortcut becomes tech debt. What if the tooling itself prevented cutting corners?
+        </aside>
+      </section>
+
+      <!-- Slide 3: GitHub Contribution Graph -->
+      <section class="title-slide">
+        <div class="contrib-graph">
+          <!-- Week 1 (oldest — low activity) -->
+          <div class="day"></div><div class="day"></div><div class="day l1"></div><div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div>
+          <!-- Week 2 -->
+          <div class="day"></div><div class="day l1"></div><div class="day"></div><div class="day"></div><div class="day l1"></div><div class="day"></div><div class="day"></div>
+          <!-- Week 3 -->
+          <div class="day l1"></div><div class="day"></div><div class="day"></div><div class="day l1"></div><div class="day"></div><div class="day l1"></div><div class="day"></div>
+          <!-- Week 4 -->
+          <div class="day"></div><div class="day"></div><div class="day l1"></div><div class="day"></div><div class="day l1"></div><div class="day"></div><div class="day"></div>
+          <!-- Week 5 -->
+          <div class="day l1"></div><div class="day"></div><div class="day l1"></div><div class="day l1"></div><div class="day"></div><div class="day"></div><div class="day l1"></div>
+          <!-- Week 6 -->
+          <div class="day"></div><div class="day l1"></div><div class="day"></div><div class="day l1"></div><div class="day l1"></div><div class="day"></div><div class="day"></div>
+          <!-- Week 7 -->
+          <div class="day l1"></div><div class="day l1"></div><div class="day"></div><div class="day"></div><div class="day l1"></div><div class="day l1"></div><div class="day"></div>
+          <!-- Week 8 -->
+          <div class="day"></div><div class="day l1"></div><div class="day l1"></div><div class="day"></div><div class="day"></div><div class="day l1"></div><div class="day l1"></div>
+          <!-- Week 9 -->
+          <div class="day l1"></div><div class="day"></div><div class="day l1"></div><div class="day l1"></div><div class="day l1"></div><div class="day"></div><div class="day"></div>
+          <!-- Week 10 -->
+          <div class="day"></div><div class="day l1"></div><div class="day l1"></div><div class="day l2"></div><div class="day l1"></div><div class="day"></div><div class="day l1"></div>
+          <!-- Week 11 -->
+          <div class="day l1"></div><div class="day"></div><div class="day l1"></div><div class="day l1"></div><div class="day l2"></div><div class="day l1"></div><div class="day"></div>
+          <!-- Week 12 -->
+          <div class="day"></div><div class="day l1"></div><div class="day l2"></div><div class="day l1"></div><div class="day"></div><div class="day l1"></div><div class="day l1"></div>
+          <!-- Week 13 -->
+          <div class="day l1"></div><div class="day l1"></div><div class="day l1"></div><div class="day l2"></div><div class="day l1"></div><div class="day l2"></div><div class="day"></div>
+          <!-- Week 14 -->
+          <div class="day"></div><div class="day l1"></div><div class="day l2"></div><div class="day l1"></div><div class="day l1"></div><div class="day l1"></div><div class="day l1"></div>
+          <!-- Week 15 -->
+          <div class="day l1"></div><div class="day l2"></div><div class="day l1"></div><div class="day l1"></div><div class="day l2"></div><div class="day l1"></div><div class="day"></div>
+          <!-- Week 16 -->
+          <div class="day l1"></div><div class="day l1"></div><div class="day l2"></div><div class="day l2"></div><div class="day l1"></div><div class="day l1"></div><div class="day l1"></div>
+          <!-- Week 17 -->
+          <div class="day"></div><div class="day l2"></div><div class="day l1"></div><div class="day l2"></div><div class="day l1"></div><div class="day l2"></div><div class="day l1"></div>
+          <!-- Week 18 -->
+          <div class="day l1"></div><div class="day l1"></div><div class="day l2"></div><div class="day l1"></div><div class="day l2"></div><div class="day l1"></div><div class="day l2"></div>
+          <!-- Week 19 -->
+          <div class="day l2"></div><div class="day l1"></div><div class="day l1"></div><div class="day l2"></div><div class="day l2"></div><div class="day l1"></div><div class="day l1"></div>
+          <!-- Week 20 -->
+          <div class="day l1"></div><div class="day l2"></div><div class="day l2"></div><div class="day l1"></div><div class="day l1"></div><div class="day l2"></div><div class="day l2"></div>
+          <!-- Week 21 -->
+          <div class="day l2"></div><div class="day l1"></div><div class="day l2"></div><div class="day l2"></div><div class="day l2"></div><div class="day l1"></div><div class="day l1"></div>
+          <!-- Week 22 -->
+          <div class="day l1"></div><div class="day l2"></div><div class="day l1"></div><div class="day l2"></div><div class="day l2"></div><div class="day l2"></div><div class="day l2"></div>
+          <!-- Week 23 -->
+          <div class="day l2"></div><div class="day l1"></div><div class="day l2"></div><div class="day l1"></div><div class="day l2"></div><div class="day l2"></div><div class="day l1"></div>
+          <!-- Week 24 -->
+          <div class="day l1"></div><div class="day l2"></div><div class="day l2"></div><div class="day l2"></div><div class="day l1"></div><div class="day l2"></div><div class="day l2"></div>
+          <!-- Week 25 -->
+          <div class="day l2"></div><div class="day l2"></div><div class="day l1"></div><div class="day l2"></div><div class="day l2"></div><div class="day l2"></div><div class="day l1"></div>
+          <!-- Week 26 — midpoint, activity starts ramping up -->
+          <div class="day l1"></div><div class="day l2"></div><div class="day l2"></div><div class="day l2"></div><div class="day l3"></div><div class="day l2"></div><div class="day l2"></div>
+          <!-- Week 27 -->
+          <div class="day l2"></div><div class="day l2"></div><div class="day l3"></div><div class="day l2"></div><div class="day l2"></div><div class="day l2"></div><div class="day l3"></div>
+          <!-- Week 28 -->
+          <div class="day l2"></div><div class="day l3"></div><div class="day l2"></div><div class="day l2"></div><div class="day l3"></div><div class="day l2"></div><div class="day l2"></div>
+          <!-- Week 29 -->
+          <div class="day l3"></div><div class="day l2"></div><div class="day l2"></div><div class="day l3"></div><div class="day l2"></div><div class="day l3"></div><div class="day l2"></div>
+          <!-- Week 30 -->
+          <div class="day l2"></div><div class="day l3"></div><div class="day l3"></div><div class="day l2"></div><div class="day l3"></div><div class="day l2"></div><div class="day l3"></div>
+          <!-- Week 31 -->
+          <div class="day l3"></div><div class="day l2"></div><div class="day l3"></div><div class="day l3"></div><div class="day l2"></div><div class="day l3"></div><div class="day l2"></div>
+          <!-- Week 32 -->
+          <div class="day l2"></div><div class="day l3"></div><div class="day l2"></div><div class="day l3"></div><div class="day l3"></div><div class="day l3"></div><div class="day l3"></div>
+          <!-- Week 33 -->
+          <div class="day l3"></div><div class="day l3"></div><div class="day l3"></div><div class="day l2"></div><div class="day l3"></div><div class="day l3"></div><div class="day l2"></div>
+          <!-- Week 34 -->
+          <div class="day l2"></div><div class="day l3"></div><div class="day l3"></div><div class="day l3"></div><div class="day l3"></div><div class="day l2"></div><div class="day l3"></div>
+          <!-- Week 35 -->
+          <div class="day l3"></div><div class="day l2"></div><div class="day l3"></div><div class="day l3"></div><div class="day l4"></div><div class="day l3"></div><div class="day l3"></div>
+          <!-- Week 36 -->
+          <div class="day l3"></div><div class="day l3"></div><div class="day l4"></div><div class="day l3"></div><div class="day l3"></div><div class="day l3"></div><div class="day l4"></div>
+          <!-- Week 37 -->
+          <div class="day l3"></div><div class="day l4"></div><div class="day l3"></div><div class="day l3"></div><div class="day l4"></div><div class="day l3"></div><div class="day l3"></div>
+          <!-- Week 38 -->
+          <div class="day l4"></div><div class="day l3"></div><div class="day l4"></div><div class="day l3"></div><div class="day l3"></div><div class="day l4"></div><div class="day l3"></div>
+          <!-- Week 39 -->
+          <div class="day l3"></div><div class="day l4"></div><div class="day l3"></div><div class="day l4"></div><div class="day l4"></div><div class="day l3"></div><div class="day l4"></div>
+          <!-- Week 40 -->
+          <div class="day l4"></div><div class="day l3"></div><div class="day l4"></div><div class="day l4"></div><div class="day l3"></div><div class="day l4"></div><div class="day l3"></div>
+          <!-- Week 41 -->
+          <div class="day l3"></div><div class="day l4"></div><div class="day l4"></div><div class="day l3"></div><div class="day l4"></div><div class="day l4"></div><div class="day l4"></div>
+          <!-- Week 42 -->
+          <div class="day l4"></div><div class="day l4"></div><div class="day l3"></div><div class="day l4"></div><div class="day l4"></div><div class="day l4"></div><div class="day l3"></div>
+          <!-- Week 43 -->
+          <div class="day l4"></div><div class="day l3"></div><div class="day l4"></div><div class="day l4"></div><div class="day l5"></div><div class="day l4"></div><div class="day l4"></div>
+          <!-- Week 44 -->
+          <div class="day l4"></div><div class="day l4"></div><div class="day l5"></div><div class="day l4"></div><div class="day l4"></div><div class="day l5"></div><div class="day l4"></div>
+          <!-- Week 45 -->
+          <div class="day l4"></div><div class="day l5"></div><div class="day l4"></div><div class="day l5"></div><div class="day l4"></div><div class="day l4"></div><div class="day l5"></div>
+          <!-- Week 46 -->
+          <div class="day l5"></div><div class="day l4"></div><div class="day l5"></div><div class="day l4"></div><div class="day l5"></div><div class="day l4"></div><div class="day l4"></div>
+          <!-- Week 47 -->
+          <div class="day l4"></div><div class="day l5"></div><div class="day l4"></div><div class="day l5"></div><div class="day l5"></div><div class="day l5"></div><div class="day l4"></div>
+          <!-- Week 48 -->
+          <div class="day l5"></div><div class="day l4"></div><div class="day l5"></div><div class="day l5"></div><div class="day l4"></div><div class="day l5"></div><div class="day l5"></div>
+          <!-- Week 49 -->
+          <div class="day l5"></div><div class="day l5"></div><div class="day l4"></div><div class="day l5"></div><div class="day l5"></div><div class="day l5"></div><div class="day l4"></div>
+          <!-- Week 50 -->
+          <div class="day l4"></div><div class="day l5"></div><div class="day l5"></div><div class="day l5"></div><div class="day l5"></div><div class="day l4"></div><div class="day l5"></div>
+          <!-- Week 51 -->
+          <div class="day l5"></div><div class="day l5"></div><div class="day l5"></div><div class="day l5"></div><div class="day l5"></div><div class="day l5"></div><div class="day l5"></div>
+          <!-- Week 52 (most recent — peak activity) -->
+          <div class="day l5"></div><div class="day l5"></div><div class="day l5"></div><div class="day l5"></div><div class="day l5"></div><div class="day l5"></div><div class="day l5"></div>
+        </div>
+        <p class="small-text" style="margin-top: 1.5em;">Built with metaswarm.</p>
+        <aside class="notes">
+          This is my GitHub over the last month. I'm not going to read you the numbers — you can see for yourself. All of this was built using what I'm about to show you.
+        </aside>
+      </section>
+
+      <!-- Slide 4: What is metaswarm? -->
+      <section>
+        <p style="font-size: 1.3em; line-height: 1.6;">
+          An open-source orchestration framework that coordinates AI agents through a structured development workflow — <span class="accent">from idea to merged PR.</span>
+        </p>
+        <div class="fragment" style="margin-top: 2em;">
+          <span class="accent" style="font-size: 1.1em;">18 agents</span> &middot;
+          <span class="accent" style="font-size: 1.1em;">9 phases</span> &middot;
+          <span class="accent" style="font-size: 1.1em;">Git-native knowledge base</span>
+        </div>
+        <aside class="notes">
+          metaswarm is open source, MIT licensed. It gives Claude Code a structured workflow with specialized agents. Let me show you what that looks like.
+        </aside>
+      </section>
+
+    </div><!-- /.slides -->
+  </div><!-- /.reveal -->
+
+  <!-- Reveal.js -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.js"></script>
+  <!-- Plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/notes/notes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/highlight/highlight.js"></script>
+
+  <script>
+    Reveal.initialize({
+      hash: true,
+      transition: 'fade',
+      controlsTutorial: false,
+      plugins: [RevealNotes, RevealHighlight]
+    });
+  </script>
+</body>
+</html>
