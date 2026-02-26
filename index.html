@@ -379,30 +379,22 @@
 
       <!-- Slide 14: Your First Task -->
       <section>
-        <h2>Your First Task</h2>
+        <h2>Try It</h2>
         <div style="margin: 1.5em 0;">
-          <p class="fragment" style="font-size: 0.9em; margin-bottom: 1em;">
-            <span class="accent" style="font-weight: 600;">Step 1:</span> Create a GitHub issue describing a small feature
-          </p>
-          <div class="fragment">
-            <p style="font-size: 0.9em; margin-bottom: 0.6em;">
-              <span class="accent" style="font-weight: 600;">Step 2:</span> Run it
-            </p>
-            <div class="terminal-block">
-              <div class="terminal-header">
-                <span class="terminal-dot red"></span>
-                <span class="terminal-dot yellow"></span>
-                <span class="terminal-dot green"></span>
-              </div>
-              <div class="terminal-body">
-                <span class="command">/project:start-task &lt;issue-number&gt;</span>
-              </div>
+          <div class="terminal-block fragment">
+            <div class="terminal-header">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+            </div>
+            <div class="terminal-body" style="text-align: left; font-size: 0.8em;">
+              <span class="command">/start-task</span> Add a webhook system that lets users register callback URLs for events, with retry logic, signature verification, and a delivery log UI.
             </div>
           </div>
         </div>
-        <p class="fragment" style="font-size: 0.6em; color: rgba(224, 224, 224, 0.55); font-style: italic;">Pick something small &mdash; a new endpoint, a UI component, a bug fix.</p>
+        <p class="fragment" style="font-size: 0.6em; color: rgba(224, 224, 224, 0.55); font-style: italic;">Pick something ambitious &mdash; multi-file features, new subsystems, complex refactors.</p>
         <aside class="notes">
-          Pick something small for your first run. A new endpoint, a UI component, a bug fix. Create a GitHub issue for it — just a few sentences describing what you want. Then use the start-task command and watch what happens.
+          Just run /start-task and describe what you want in plain English. No issue required. Pick something with real complexity — a webhook system, a permissions layer, a reporting pipeline. Something that touches multiple files and needs real architecture. Then watch what happens.
         </aside>
       </section>
 
@@ -434,7 +426,98 @@
         </aside>
       </section>
 
-      <!-- Slide 16: Resources & Q&A -->
+      <!-- Slide 16: Testing -->
+      <section>
+        <h2>Testing Is Non-Negotiable</h2>
+        <div class="two-col" style="margin-top: 1.2em;">
+          <div>
+            <p style="font-size: 0.7em; color: rgba(224, 224, 224, 0.55); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.6em;">What metaswarm enforces</p>
+            <div class="workflow-sequence">
+              <div class="workflow-step fragment">
+                <span class="workflow-agent">TDD</span> &mdash; tests written before code
+              </div>
+              <div class="workflow-step fragment">
+                <span class="workflow-agent">Coverage gates</span> &mdash; configured in <code>.coverage-thresholds.json</code>
+              </div>
+              <div class="workflow-step fragment">
+                <span class="workflow-agent">Independent verification</span> &mdash; orchestrator runs tests itself
+              </div>
+              <div class="workflow-step fragment">
+                <span class="workflow-agent">Blocking</span> &mdash; no PR until thresholds pass
+              </div>
+            </div>
+          </div>
+          <div class="fragment">
+            <p style="font-size: 0.7em; color: rgba(224, 224, 224, 0.55); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.6em;">What you configure</p>
+            <div class="terminal-block">
+              <div class="terminal-header">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+              </div>
+              <div class="terminal-body" style="font-size: 0.75em; text-align: left; line-height: 1.7;">
+                <span style="color: rgba(224, 224, 224, 0.45);">// .coverage-thresholds.json</span><br>
+                {<br>
+                &nbsp;&nbsp;"lines": 100,<br>
+                &nbsp;&nbsp;"branches": 100,<br>
+                &nbsp;&nbsp;"functions": 100,<br>
+                &nbsp;&nbsp;"statements": 100<br>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+        <aside class="notes">
+          Testing is not optional in metaswarm — it's enforced. TDD is mandatory: tests are written before implementation code. Coverage thresholds are defined in a config file and the orchestrator checks them independently — it doesn't trust the agent's self-report. If thresholds aren't met, the PR simply doesn't get created. You set the bar, metaswarm holds it.
+        </aside>
+      </section>
+
+      <!-- Slide 17: Code Review & PR Shepherd -->
+      <section>
+        <h2>Code Review &amp; PR Shepherd</h2>
+        <p class="fragment" style="font-size: 0.75em; color: rgba(224, 224, 224, 0.7); margin-bottom: 1em;">
+          metaswarm works alongside your existing review tools
+        </p>
+        <div class="review-tools fragment" style="display: flex; justify-content: center; gap: 1.8em; margin-bottom: 1.5em;">
+          <span class="review-tool-badge">CodeRabbit</span>
+          <span class="review-tool-badge">Greptile</span>
+          <span class="review-tool-badge">BugBot</span>
+          <span class="review-tool-badge">Ellipsis</span>
+        </div>
+        <div class="fragment" style="margin-top: 0.8em;">
+          <p style="font-size: 0.7em; color: rgba(224, 224, 224, 0.55); margin-bottom: 0.6em;">When reviews come in, hand them back to metaswarm:</p>
+          <div class="terminal-block">
+            <div class="terminal-header">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+            </div>
+            <div class="terminal-body" style="text-align: left; line-height: 1.8;">
+              <span class="command">/pr-shepherd &lt;pr-number&gt;</span><br>
+              <span style="color: rgba(224, 224, 224, 0.4); font-size: 0.85em;">Monitors PR &rarr; addresses review comments &rarr; pushes fixes &rarr; repeats until merged</span>
+            </div>
+          </div>
+        </div>
+        <div class="workflow-sequence fragment" style="margin-top: 1.2em;">
+          <div class="workflow-step">
+            <span class="workflow-agent">PR created</span> by metaswarm
+          </div>
+          <div class="workflow-step">
+            <span class="workflow-agent">Review bots</span> post comments &amp; suggestions
+          </div>
+          <div class="workflow-step">
+            <span class="workflow-agent">PR Shepherd</span> reads feedback, pushes fixes
+          </div>
+          <div class="workflow-step">
+            <span class="workflow-agent">Repeat</span> until approved &amp; merged
+          </div>
+        </div>
+        <aside class="notes">
+          metaswarm doesn't replace your code review tools — it works with them. Tools like CodeRabbit, Greptile, BugBot, and Ellipsis post comments on your PRs as usual. Then you run /pr-shepherd with the PR number. The shepherd reads all the review comments, addresses them, pushes fixes, and keeps going until the PR is approved and merged. It's the full loop — from task to merged code — with your existing quality tools in the pipeline.
+        </aside>
+      </section>
+
+      <!-- Slide 18: Resources & Q&A -->
       <section class="title-slide">
         <p style="font-size: 1.2em; color: var(--accent); font-family: 'JetBrains Mono', 'Menlo', monospace; font-weight: 600; margin-bottom: 0.3em;">github.com/dsifry/metaswarm</p>
         <p style="font-size: 0.8em; color: rgba(224, 224, 224, 0.6);">Star it. Clone it. File issues.</p>

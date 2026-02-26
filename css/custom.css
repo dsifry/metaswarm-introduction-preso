@@ -268,7 +268,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2em;
-  align-items: start;
+  align-items: stretch;
   margin: 1em 0;
 }
 
@@ -587,6 +587,9 @@
   padding: 1.4em 1.6em;
   border: 1px solid var(--border);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .verify-block .verify-label {
@@ -752,4 +755,19 @@
 .workflow-agent {
   color: var(--accent);
   font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   23. Review tool badges (slide 17)
+   -------------------------------------------------------------------------- */
+.review-tool-badge {
+  display: inline-block;
+  padding: 0.4em 1em;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 0.7em;
+  font-weight: 600;
+  color: var(--heading);
+  letter-spacing: 0.02em;
 }
