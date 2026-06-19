@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>metaswarm — Quality at Speed</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Reveal.js 5.2.1 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/theme/black.css" id="theme">
+
+  <!-- Syntax highlighting -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/highlight/monokai.css">
+
+  <!-- Custom theme (loaded last to override) -->
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- ================================================================
+           ACT I — The Hook
+           ================================================================ -->
+
+      <!-- Slide 1: Title -->
+      <section class="title-slide">
+        <h1>metaswarm</h1>
+        <p class="accent" style="font-size: 1.5em; font-weight: 300;">Quality at Speed</p>
+        <p class="small-text" style="margin-top: 2em;">Dave Sifry</p>
+        <aside class="notes">
+          Welcome everyone. I'm Dave Sifry. I want to show you something that's changed how I build software.
+        </aside>
+      </section>
+
+      <!-- Slide 2: The Problem -->
+      <section>
+        <h2>Moving fast usually means<br>cutting corners.</h2>
+        <p class="fragment" style="margin-top: 1.5em; font-size: 1.2em;">
+          What if your tools <span class="accent">enforced quality automatically?</span>
+        </p>
+        <aside class="notes">
+          As founders, we're always under pressure to ship. But every shortcut becomes tech debt. What if the tooling itself prevented cutting corners?
+        </aside>
+      </section>
+
+      <!-- Slide 3: GitHub Contribution Graph -->
+      <section class="title-slide">
+        <div class="contrib-wrapper">
+          <!-- Header -->
+          <div class="contrib-header">
+            <span>2,242 contributions in the last year</span>
+            <a href="https://github.com/dsifry" class="contrib-source">github.com/dsifry</a>
+          </div>
+          <!-- Month labels -->
+          <div class="contrib-body">
+            <div class="contrib-day-labels">
+              <span></span><span>Mon</span><span></span><span>Wed</span><span></span><span>Fri</span><span></span>
+            </div>
+            <div class="contrib-main">
+              <div class="contrib-months">
+                <span style="grid-column:1">Mar</span>
+                <span style="grid-column:6">Apr</span>
+                <span style="grid-column:10">May</span>
+                <span style="grid-column:15">Jun</span>
+                <span style="grid-column:19">Jul</span>
+                <span style="grid-column:23">Aug</span>
+                <span style="grid-column:28">Sep</span>
+                <span style="grid-column:32">Oct</span>
+                <span style="grid-column:36">Nov</span>
+                <span style="grid-column:41">Dec</span>
+                <span style="grid-column:45">Jan</span>
+                <span style="grid-column:50">Feb</span>
+              </div>
+              <div class="contrib-graph">
+                <!-- Real GitHub contribution data — 2,242 contributions, using GitHub native colors -->
+          <div class="day" style="background:#ebedf0" title="0 contributions on 2025-02-23"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-02-24"></div><div class="day" style="background:#9be9a8" title="3 contributions on 2025-02-25"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-02-26"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-02-27"></div><div class="day" style="background:#9be9a8" title="3 contributions on 2025-02-28"></div><div class="day" style="background:#9be9a8" title="2 contributions on 2025-03-01"></div>
+          <div class="day" style="background:#ebedf0" title="0 contributions on 2025-03-02"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-03-03"></div><div class="day" style="background:#9be9a8" title="2 contributions on 2025-03-04"></div><div class="day" style="background:#9be9a8" title="2 contributions on 2025-03-05"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-03-06"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-03-07"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-03-08"></div>
+          <div class="day" style="background:#ebedf0" title="0 contributions on 2025-03-09"></div><div class="day" style="background:#9be9a8" title="2 contributions on 2025-03-10"></div><div class="day" style="background:#9be9a8" title="4 contributions on 2025-03-11"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-03-12"></div><div class="day" style="background:#9be9a8" title="7 contributions on 2025-03-13"></div><div class="day" style="background:#9be9a8" title="2 contributions on 2025-03-14"></div><div class="day" style="background:#9be9a8" title="8 contributions on 2025-03-15"></div>
+          <div class="day" style="background:#9be9a8" title="1 contribution on 2025-03-16"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-03-17"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-03-18"></div><div class="day" style="background:#9be9a8" title="5 contributions on 2025-03-19"></div><div class="day" style="background:#9be9a8" title="4 contributions on 2025-03-20"></div><div class="day" style="background:#9be9a8" title="7 contributions on 2025-03-21"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-03-22"></div>
+          <div class="day" style="background:#ebedf0" title="0 contributions on 2025-03-23"></div><div class="day" style="background:#9be9a8" title="3 contributions on 2025-03-24"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-03-25"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-03-26"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-03-27"></div><div class="day" style="background:#9be9a8" title="2 contributions on 2025-03-28"></div><div class="day" style="background:#9be9a8" title="3 contributions on 2025-03-29"></div>
+          <div class="day" style="background:#9be9a8" title="2 contributions on 2025-03-30"></div><div class="day" style="background:#9be9a8" title="7 contributions on 2025-03-31"></div><div class="day" style="background:#9be9a8" title="4 contributions on 2025-04-01"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-04-02"></div><div class="day" style="background:#9be9a8" title="2 contributions on 2025-04-03"></div><div class="day" style="background:#9be9a8" title="7 contributions on 2025-04-04"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-04-05"></div>
+          <div class="day" style="background:#ebedf0" title="0 contributions on 2025-04-06"></div><div class="day" style="background:#9be9a8" title="3 contributions on 2025-04-07"></div><div class="day" style="background:#9be9a8" title="3 contributions on 2025-04-08"></div><div class="day" style="background:#9be9a8" title="10 contributions on 2025-04-09"></div><div class="day" style="background:#9be9a8" title="10 contributions on 2025-04-10"></div><div class="day" style="background:#40c463" title="14 contributions on 2025-04-11"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-04-12"></div>
+          <div class="day" style="background:#ebedf0" title="0 contributions on 2025-04-13"></div><div class="day" style="background:#9be9a8" title="6 contributions on 2025-04-14"></div><div class="day" style="background:#9be9a8" title="2 contributions on 2025-04-15"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-04-16"></div><div class="day" style="background:#9be9a8" title="3 contributions on 2025-04-17"></div><div class="day" style="background:#9be9a8" title="2 contributions on 2025-04-18"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-04-19"></div>
+          <div class="day" style="background:#9be9a8" title="2 contributions on 2025-04-20"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-04-21"></div><div class="day" style="background:#9be9a8" title="7 contributions on 2025-04-22"></div><div class="day" style="background:#9be9a8" title="2 contributions on 2025-04-23"></div><div class="day" style="background:#9be9a8" title="4 contributions on 2025-04-24"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-04-25"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-04-26"></div>
+          <div class="day" style="background:#ebedf0" title="0 contributions on 2025-04-27"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-04-28"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-04-29"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-04-30"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-05-01"></div><div class="day" style="background:#9be9a8" title="4 contributions on 2025-05-02"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-05-03"></div>
+          <div class="day" style="background:#9be9a8" title="1 contribution on 2025-05-04"></div><div class="day" style="background:#9be9a8" title="2 contributions on 2025-05-05"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-05-06"></div><div class="day" style="background:#9be9a8" title="3 contributions on 2025-05-07"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-05-08"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-05-09"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-05-10"></div>
+          <div class="day" style="background:#ebedf0" title="0 contributions on 2025-05-11"></div><div class="day" style="background:#9be9a8" title="3 contributions on 2025-05-12"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-05-13"></div><div class="day" style="background:#9be9a8" title="3 contributions on 2025-05-14"></div><div class="day" style="background:#9be9a8" title="2 contributions on 2025-05-15"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-05-16"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-05-17"></div>
+          <div class="day" style="background:#9be9a8" title="1 contribution on 2025-05-18"></div><div class="day" style="background:#9be9a8" title="6 contributions on 2025-05-19"></div><div class="day" style="background:#9be9a8" title="4 contributions on 2025-05-20"></div><div class="day" style="background:#9be9a8" title="3 contributions on 2025-05-21"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-05-22"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-05-23"></div><div class="day" style="background:#9be9a8" title="3 contributions on 2025-05-24"></div>
+          <div class="day" style="background:#9be9a8" title="2 contributions on 2025-05-25"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-05-26"></div><div class="day" style="background:#9be9a8" title="6 contributions on 2025-05-27"></div><div class="day" style="background:#9be9a8" title="8 contributions on 2025-05-28"></div><div class="day" style="background:#9be9a8" title="4 contributions on 2025-05-29"></div><div class="day" style="background:#9be9a8" title="3 contributions on 2025-05-30"></div><div class="day" style="background:#9be9a8" title="2 contributions on 2025-05-31"></div>
+          <div class="day" style="background:#ebedf0" title="0 contributions on 2025-06-01"></div><div class="day" style="background:#9be9a8" title="4 contributions on 2025-06-02"></div><div class="day" style="background:#9be9a8" title="3 contributions on 2025-06-03"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-06-04"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-06-05"></div><div class="day" style="background:#9be9a8" title="3 contributions on 2025-06-06"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-06-07"></div>
+          <div class="day" style="background:#ebedf0" title="0 contributions on 2025-06-08"></div><div class="day" style="background:#9be9a8" title="2 contributions on 2025-06-09"></div><div class="day" style="background:#9be9a8" title="3 contributions on 2025-06-10"></div><div class="day" style="background:#9be9a8" title="5 contributions on 2025-06-11"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-06-12"></div><div class="day" style="background:#9be9a8" title="4 contributions on 2025-06-13"></div><div class="day" style="background:#9be9a8" title="2 contributions on 2025-06-14"></div>
+          <div class="day" style="background:#ebedf0" title="0 contributions on 2025-06-15"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-06-16"></div><div class="day" style="background:#9be9a8" title="2 contributions on 2025-06-17"></div><div class="day" style="background:#9be9a8" title="4 contributions on 2025-06-18"></div><div class="day" style="background:#9be9a8" title="6 contributions on 2025-06-19"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-06-20"></div><div class="day" style="background:#9be9a8" title="2 contributions on 2025-06-21"></div>
+          <div class="day" style="background:#ebedf0" title="0 contributions on 2025-06-22"></div><div class="day" style="background:#9be9a8" title="2 contributions on 2025-06-23"></div><div class="day" style="background:#9be9a8" title="5 contributions on 2025-06-24"></div><div class="day" style="background:#9be9a8" title="3 contributions on 2025-06-25"></div><div class="day" style="background:#9be9a8" title="5 contributions on 2025-06-26"></div><div class="day" style="background:#9be9a8" title="6 contributions on 2025-06-27"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-06-28"></div>
+          <div class="day" style="background:#9be9a8" title="7 contributions on 2025-06-29"></div><div class="day" style="background:#9be9a8" title="5 contributions on 2025-06-30"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-07-01"></div><div class="day" style="background:#9be9a8" title="2 contributions on 2025-07-02"></div><div class="day" style="background:#9be9a8" title="7 contributions on 2025-07-03"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-07-04"></div><div class="day" style="background:#9be9a8" title="2 contributions on 2025-07-05"></div>
+          <div class="day" style="background:#ebedf0" title="0 contributions on 2025-07-06"></div><div class="day" style="background:#9be9a8" title="3 contributions on 2025-07-07"></div><div class="day" style="background:#9be9a8" title="2 contributions on 2025-07-08"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-07-09"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-07-10"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-07-11"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-07-12"></div>
+          <div class="day" style="background:#ebedf0" title="0 contributions on 2025-07-13"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-07-14"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-07-15"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-07-16"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-07-17"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-07-18"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-07-19"></div>
+          <div class="day" style="background:#ebedf0" title="0 contributions on 2025-07-20"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-07-21"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-07-22"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-07-23"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-07-24"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-07-25"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-07-26"></div>
+          <div class="day" style="background:#ebedf0" title="0 contributions on 2025-07-27"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-07-28"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-07-29"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-07-30"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-07-31"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-08-01"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-08-02"></div>
+          <div class="day" style="background:#ebedf0" title="0 contributions on 2025-08-03"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-08-04"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-08-05"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-08-06"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-08-07"></div><div class="day" style="background:#9be9a8" title="4 contributions on 2025-08-08"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-08-09"></div>
+          <div class="day" style="background:#9be9a8" title="5 contributions on 2025-08-10"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-08-11"></div><div class="day" style="background:#9be9a8" title="9 contributions on 2025-08-12"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-08-13"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-08-14"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-08-15"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-08-16"></div>
+          <div class="day" style="background:#ebedf0" title="0 contributions on 2025-08-17"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-08-18"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-08-19"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-08-20"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-08-21"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-08-22"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-08-23"></div>
+          <div class="day" style="background:#ebedf0" title="0 contributions on 2025-08-24"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-08-25"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-08-26"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-08-27"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-08-28"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-08-29"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-08-30"></div>
+          <div class="day" style="background:#ebedf0" title="0 contributions on 2025-08-31"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-09-01"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-09-02"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-09-03"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-09-04"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-09-05"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-09-06"></div>
+          <div class="day" style="background:#9be9a8" title="1 contribution on 2025-09-07"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-09-08"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-09-09"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-09-10"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-09-11"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-09-12"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-09-13"></div>
+          <div class="day" style="background:#9be9a8" title="1 contribution on 2025-09-14"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-09-15"></div><div class="day" style="background:#9be9a8" title="2 contributions on 2025-09-16"></div><div class="day" style="background:#9be9a8" title="4 contributions on 2025-09-17"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-09-18"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-09-19"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-09-20"></div>
+          <div class="day" style="background:#9be9a8" title="1 contribution on 2025-09-21"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-09-22"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-09-23"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-09-24"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-09-25"></div><div class="day" style="background:#9be9a8" title="2 contributions on 2025-09-26"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-09-27"></div>
+          <div class="day" style="background:#9be9a8" title="2 contributions on 2025-09-28"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-09-29"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-09-30"></div><div class="day" style="background:#9be9a8" title="5 contributions on 2025-10-01"></div><div class="day" style="background:#9be9a8" title="3 contributions on 2025-10-02"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-10-03"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-10-04"></div>
+          <div class="day" style="background:#9be9a8" title="2 contributions on 2025-10-05"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-10-06"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-10-07"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-10-08"></div><div class="day" style="background:#9be9a8" title="3 contributions on 2025-10-09"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-10-10"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-10-11"></div>
+          <div class="day" style="background:#ebedf0" title="0 contributions on 2025-10-12"></div><div class="day" style="background:#9be9a8" title="8 contributions on 2025-10-13"></div><div class="day" style="background:#9be9a8" title="5 contributions on 2025-10-14"></div><div class="day" style="background:#9be9a8" title="9 contributions on 2025-10-15"></div><div class="day" style="background:#9be9a8" title="3 contributions on 2025-10-16"></div><div class="day" style="background:#9be9a8" title="5 contributions on 2025-10-17"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-10-18"></div>
+          <div class="day" style="background:#9be9a8" title="1 contribution on 2025-10-19"></div><div class="day" style="background:#9be9a8" title="9 contributions on 2025-10-20"></div><div class="day" style="background:#9be9a8" title="2 contributions on 2025-10-21"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-10-22"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-10-23"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-10-24"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-10-25"></div>
+          <div class="day" style="background:#ebedf0" title="0 contributions on 2025-10-26"></div><div class="day" style="background:#9be9a8" title="4 contributions on 2025-10-27"></div><div class="day" style="background:#9be9a8" title="5 contributions on 2025-10-28"></div><div class="day" style="background:#9be9a8" title="3 contributions on 2025-10-29"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-10-30"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-10-31"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-11-01"></div>
+          <div class="day" style="background:#9be9a8" title="1 contribution on 2025-11-02"></div><div class="day" style="background:#9be9a8" title="6 contributions on 2025-11-03"></div><div class="day" style="background:#9be9a8" title="4 contributions on 2025-11-04"></div><div class="day" style="background:#9be9a8" title="11 contributions on 2025-11-05"></div><div class="day" style="background:#9be9a8" title="6 contributions on 2025-11-06"></div><div class="day" style="background:#9be9a8" title="6 contributions on 2025-11-07"></div><div class="day" style="background:#9be9a8" title="3 contributions on 2025-11-08"></div>
+          <div class="day" style="background:#9be9a8" title="6 contributions on 2025-11-09"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-11-10"></div><div class="day" style="background:#9be9a8" title="8 contributions on 2025-11-11"></div><div class="day" style="background:#40c463" title="15 contributions on 2025-11-12"></div><div class="day" style="background:#9be9a8" title="4 contributions on 2025-11-13"></div><div class="day" style="background:#9be9a8" title="6 contributions on 2025-11-14"></div><div class="day" style="background:#9be9a8" title="7 contributions on 2025-11-15"></div>
+          <div class="day" style="background:#40c463" title="14 contributions on 2025-11-16"></div><div class="day" style="background:#9be9a8" title="5 contributions on 2025-11-17"></div><div class="day" style="background:#9be9a8" title="13 contributions on 2025-11-18"></div><div class="day" style="background:#40c463" title="16 contributions on 2025-11-19"></div><div class="day" style="background:#9be9a8" title="8 contributions on 2025-11-20"></div><div class="day" style="background:#9be9a8" title="5 contributions on 2025-11-21"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-11-22"></div>
+          <div class="day" style="background:#9be9a8" title="11 contributions on 2025-11-23"></div><div class="day" style="background:#9be9a8" title="8 contributions on 2025-11-24"></div><div class="day" style="background:#9be9a8" title="9 contributions on 2025-11-25"></div><div class="day" style="background:#9be9a8" title="5 contributions on 2025-11-26"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-11-27"></div><div class="day" style="background:#9be9a8" title="13 contributions on 2025-11-28"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-11-29"></div>
+          <div class="day" style="background:#ebedf0" title="0 contributions on 2025-11-30"></div><div class="day" style="background:#30a14e" title="33 contributions on 2025-12-01"></div><div class="day" style="background:#40c463" title="27 contributions on 2025-12-02"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-12-03"></div><div class="day" style="background:#9be9a8" title="4 contributions on 2025-12-04"></div><div class="day" style="background:#9be9a8" title="9 contributions on 2025-12-05"></div><div class="day" style="background:#9be9a8" title="3 contributions on 2025-12-06"></div>
+          <div class="day" style="background:#9be9a8" title="3 contributions on 2025-12-07"></div><div class="day" style="background:#9be9a8" title="2 contributions on 2025-12-08"></div><div class="day" style="background:#40c463" title="16 contributions on 2025-12-09"></div><div class="day" style="background:#9be9a8" title="10 contributions on 2025-12-10"></div><div class="day" style="background:#40c463" title="14 contributions on 2025-12-11"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-12-12"></div><div class="day" style="background:#9be9a8" title="2 contributions on 2025-12-13"></div>
+          <div class="day" style="background:#9be9a8" title="2 contributions on 2025-12-14"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-12-15"></div><div class="day" style="background:#9be9a8" title="7 contributions on 2025-12-16"></div><div class="day" style="background:#40c463" title="20 contributions on 2025-12-17"></div><div class="day" style="background:#9be9a8" title="8 contributions on 2025-12-18"></div><div class="day" style="background:#9be9a8" title="11 contributions on 2025-12-19"></div><div class="day" style="background:#9be9a8" title="6 contributions on 2025-12-20"></div>
+          <div class="day" style="background:#ebedf0" title="0 contributions on 2025-12-21"></div><div class="day" style="background:#9be9a8" title="6 contributions on 2025-12-22"></div><div class="day" style="background:#9be9a8" title="2 contributions on 2025-12-23"></div><div class="day" style="background:#9be9a8" title="6 contributions on 2025-12-24"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-12-25"></div><div class="day" style="background:#9be9a8" title="1 contribution on 2025-12-26"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2025-12-27"></div>
+          <div class="day" style="background:#9be9a8" title="5 contributions on 2025-12-28"></div><div class="day" style="background:#9be9a8" title="8 contributions on 2025-12-29"></div><div class="day" style="background:#9be9a8" title="11 contributions on 2025-12-30"></div><div class="day" style="background:#9be9a8" title="13 contributions on 2025-12-31"></div><div class="day" style="background:#40c463" title="18 contributions on 2026-01-01"></div><div class="day" style="background:#9be9a8" title="10 contributions on 2026-01-02"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2026-01-03"></div>
+          <div class="day" style="background:#40c463" title="14 contributions on 2026-01-04"></div><div class="day" style="background:#40c463" title="15 contributions on 2026-01-05"></div><div class="day" style="background:#40c463" title="15 contributions on 2026-01-06"></div><div class="day" style="background:#30a14e" title="35 contributions on 2026-01-07"></div><div class="day" style="background:#9be9a8" title="12 contributions on 2026-01-08"></div><div class="day" style="background:#9be9a8" title="7 contributions on 2026-01-09"></div><div class="day" style="background:#40c463" title="22 contributions on 2026-01-10"></div>
+          <div class="day" style="background:#9be9a8" title="12 contributions on 2026-01-11"></div><div class="day" style="background:#30a14e" title="31 contributions on 2026-01-12"></div><div class="day" style="background:#9be9a8" title="3 contributions on 2026-01-13"></div><div class="day" style="background:#9be9a8" title="11 contributions on 2026-01-14"></div><div class="day" style="background:#216e39" title="50 contributions on 2026-01-15"></div><div class="day" style="background:#30a14e" title="35 contributions on 2026-01-16"></div><div class="day" style="background:#40c463" title="26 contributions on 2026-01-17"></div>
+          <div class="day" style="background:#40c463" title="15 contributions on 2026-01-18"></div><div class="day" style="background:#9be9a8" title="12 contributions on 2026-01-19"></div><div class="day" style="background:#30a14e" title="33 contributions on 2026-01-20"></div><div class="day" style="background:#9be9a8" title="13 contributions on 2026-01-21"></div><div class="day" style="background:#9be9a8" title="12 contributions on 2026-01-22"></div><div class="day" style="background:#9be9a8" title="8 contributions on 2026-01-23"></div><div class="day" style="background:#9be9a8" title="5 contributions on 2026-01-24"></div>
+          <div class="day" style="background:#9be9a8" title="3 contributions on 2026-01-25"></div><div class="day" style="background:#9be9a8" title="9 contributions on 2026-01-26"></div><div class="day" style="background:#9be9a8" title="13 contributions on 2026-01-27"></div><div class="day" style="background:#40c463" title="27 contributions on 2026-01-28"></div><div class="day" style="background:#40c463" title="22 contributions on 2026-01-29"></div><div class="day" style="background:#30a14e" title="38 contributions on 2026-01-30"></div><div class="day" style="background:#30a14e" title="31 contributions on 2026-01-31"></div>
+          <div class="day" style="background:#216e39" title="218 contributions on 2026-02-01"></div><div class="day" style="background:#30a14e" title="35 contributions on 2026-02-02"></div><div class="day" style="background:#9be9a8" title="5 contributions on 2026-02-03"></div><div class="day" style="background:#ebedf0" title="0 contributions on 2026-02-04"></div><div class="day" style="background:#9be9a8" title="12 contributions on 2026-02-05"></div><div class="day" style="background:#40c463" title="24 contributions on 2026-02-06"></div><div class="day" style="background:#40c463" title="17 contributions on 2026-02-07"></div>
+          <div class="day" style="background:#9be9a8" title="10 contributions on 2026-02-08"></div><div class="day" style="background:#40c463" title="27 contributions on 2026-02-09"></div><div class="day" style="background:#216e39" title="41 contributions on 2026-02-10"></div><div class="day" style="background:#40c463" title="19 contributions on 2026-02-11"></div><div class="day" style="background:#30a14e" title="40 contributions on 2026-02-12"></div><div class="day" style="background:#40c463" title="24 contributions on 2026-02-13"></div><div class="day" style="background:#40c463" title="14 contributions on 2026-02-14"></div>
+          <div class="day" style="background:#9be9a8" title="12 contributions on 2026-02-15"></div><div class="day" style="background:#40c463" title="15 contributions on 2026-02-16"></div><div class="day" style="background:#30a14e" title="28 contributions on 2026-02-17"></div><div class="day" style="background:#30a14e" title="38 contributions on 2026-02-18"></div><div class="day" style="background:#30a14e" title="32 contributions on 2026-02-19"></div><div class="day" style="background:#40c463" title="19 contributions on 2026-02-20"></div><div class="day" style="background:#40c463" title="15 contributions on 2026-02-21"></div>
+          <div class="day" style="background:#216e39" title="54 contributions on 2026-02-22"></div><div class="day" style="background:#216e39" title="62 contributions on 2026-02-23"></div><div class="day" style="background:#30a14e" title="36 contributions on 2026-02-24"></div><div class="day" style="background:#40c463" title="15 contributions on 2026-02-25"></div><div class="day" style="background:#40c463" title="18 contributions on 2026-02-26"></div>
+              </div><!-- /.contrib-graph -->
+            </div><!-- /.contrib-main -->
+          </div><!-- /.contrib-body -->
+          <!-- Legend -->
+          <div class="contrib-legend">
+            <span class="contrib-legend-label">Less</span>
+            <span class="contrib-legend-swatch" style="background:#ebedf0"></span>
+            <span class="contrib-legend-swatch" style="background:#9be9a8"></span>
+            <span class="contrib-legend-swatch" style="background:#40c463"></span>
+            <span class="contrib-legend-swatch" style="background:#30a14e"></span>
+            <span class="contrib-legend-swatch" style="background:#216e39"></span>
+            <span class="contrib-legend-label">More</span>
+          </div>
+        </div><!-- /.contrib-wrapper -->
+        <p class="small-text" style="margin-top: 1.5em;">Built with metaswarm. <span style="opacity: 0.5;">(hover over graph for details)</span></p>
+        <aside class="notes">
+          This is my GitHub over the last year. I'm not going to read you the numbers — you can see for yourself. All of this was built using what I'm about to show you.
+        </aside>
+      </section>
+
+      <!-- Slide 4: What is metaswarm? -->
+      <section>
+        <p style="font-size: 1.3em; line-height: 1.6;">
+          An open-source orchestration framework for <span class="accent">Claude Code, Codex CLI, and Gemini CLI</span> that coordinates AI agents through a structured development workflow — from idea to merged PR.
+        </p>
+        <div class="fragment" style="margin-top: 2em;">
+          <span class="accent" style="font-size: 1.1em;">18 agents</span> &middot;
+          <span class="accent" style="font-size: 1.1em;">13 skills</span> &middot;
+          <span class="accent" style="font-size: 1.1em;">9-phase workflow</span> &middot;
+          <span class="accent" style="font-size: 1.1em;">Git-native knowledge base</span>
+        </div>
+        <aside class="notes">
+          metaswarm is open source, MIT licensed. It works with Claude Code, OpenAI's Codex CLI, and Google's Gemini CLI. It gives them a structured workflow with 18 specialized agents and 13 orchestration skills. Let me show you what that looks like.
+        </aside>
+      </section>
+
+      <!-- ================================================================
+           ACT II — Show, Don't Tell
+           ================================================================ -->
+
+      <!-- Slide 5: Install -->
+      <section>
+        <div class="terminal-block">
+          <div class="terminal-header">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+          </div>
+          <div class="terminal-body">
+            <span class="command">$ claude plugin marketplace add dsifry/metaswarm-marketplace</span><br>
+            <span class="command fragment">$ claude plugin install metaswarm</span>
+            <span class="output-line fragment"><span class="accent">&#10003;</span> Installed metaswarm plugin</span>
+            <span class="command fragment" style="margin-top: 0.5em; display: block;">$ claude</span>
+            <span class="claude-prompt fragment">&gt; /metaswarm:setup</span>
+            <span class="output-line fragment"><span class="accent">&#10003;</span> Detected TypeScript + Next.js + Vitest</span>
+            <span class="output-line fragment"><span class="accent">&#10003;</span> Created CLAUDE.md &amp; slash commands</span>
+            <span class="final-line fragment">metaswarm is ready. Run /start-task to begin.</span>
+          </div>
+        </div>
+        <p class="fragment" style="text-align: center; font-size: 0.6em; color: rgba(224, 224, 224, 0.5); margin-top: 1em;">Or just tell Claude: <em>&ldquo;Read through github.com/dsifry/metaswarm and install it for my project.&rdquo;</em></p>
+        <aside class="notes">
+          Two shell commands to add the marketplace and install the plugin. Then run /metaswarm:setup inside Claude Code to configure your project. Or skip all that and just tell Claude to read the repo and install it — it'll figure it out.
+        </aside>
+      </section>
+
+      <!-- Slide 6: What You Get -->
+      <section>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Agents <span class="accent">(18)</span></h3>
+            <p>Researcher, Architect, Coder, Security Auditor, PR Shepherd&hellip;</p>
+          </div>
+          <div class="card">
+            <h3>Skills <span class="accent">(13)</span></h3>
+            <p>Orchestrated Execution, Design Review, External Tools&hellip;</p>
+          </div>
+          <div class="card">
+            <h3>Commands <span class="accent">(15)</span></h3>
+            <p>start-task, pr-shepherd, prime, brainstorm&hellip;</p>
+          </div>
+          <div class="card">
+            <h3>Knowledge</h3>
+            <p>Patterns, gotchas, decisions &mdash; grows with every PR</p>
+          </div>
+        </div>
+        <aside class="notes">
+          Agents are specialized roles. Skills are workflows that coordinate agents. Commands are how you interact. And the knowledge base is how the system gets smarter over time.
+        </aside>
+      </section>
+
+      <!-- Slide 7: The Workflow -->
+      <section>
+        <h2>The Workflow</h2>
+        <div class="flow-diagram">
+          <span class="flow-step fragment">Research</span>
+          <span class="flow-arrow fragment">&rarr;</span>
+          <span class="flow-step fragment">Plan</span>
+          <span class="flow-arrow fragment">&rarr;</span>
+          <span class="flow-step fragment">Plan Review</span>
+          <span class="flow-arrow fragment">&rarr;</span>
+          <span class="flow-step fragment">Design Review</span>
+          <span class="flow-arrow fragment">&rarr;</span>
+          <span class="flow-step fragment">Decompose</span>
+          <span class="flow-arrow fragment">&rarr;</span>
+          <span class="flow-step fragment active">Execute</span>
+          <span class="flow-arrow fragment">&rarr;</span>
+          <span class="flow-step fragment">Final Review</span>
+          <span class="flow-arrow fragment">&rarr;</span>
+          <span class="flow-step fragment">PR</span>
+          <span class="flow-arrow fragment">&rarr;</span>
+          <span class="flow-step fragment">Shepherd</span>
+        </div>
+        <p class="flow-note fragment">Each phase has quality gates &mdash; the system won&rsquo;t let you skip steps.</p>
+        <aside class="notes">
+          Every task follows this pipeline. The key is that each phase has quality gates built in. You can't skip from plan to code without design review. You can't merge without passing adversarial review.
+        </aside>
+      </section>
+
+      <!-- Slide 8: Trust Nothing, Verify Everything -->
+      <section>
+        <h2>Trust Nothing, Verify Everything</h2>
+        <div class="two-col">
+          <div class="verify-block verify-bad">
+            <p class="verify-label">Agent reports:</p>
+            <p class="verify-claim">&ldquo;All tests pass &check;&rdquo;</p>
+            <div class="verify-icon">&times;</div>
+          </div>
+          <div class="verify-block verify-good">
+            <p class="verify-label">Orchestrator verifies:</p>
+            <p class="verify-claim">Runs tests independently</p>
+            <div class="verify-icon">&check;</div>
+          </div>
+        </div>
+        <p style="text-align: center; font-size: 0.7em; color: rgba(224, 224, 224, 0.6); margin-top: 1em;">
+          The orchestrator never trusts self-reports. It verifies by running tests itself.
+        </p>
+        <aside class="notes">
+          This is the core philosophy. When a coding agent says 'tests pass', the orchestrator doesn't take its word for it. It runs the tests itself. It's like having a QA team that independently verifies everything.
+        </aside>
+      </section>
+
+      <!-- Slide 9: It Learns -->
+      <section>
+        <h2>It learns.</h2>
+        <div class="knowledge-entry fragment">
+          { <span class="key">"type"</span>: <span class="string">"pattern"</span>, <span class="key">"fact"</span>: <span class="string">"Always mock external APIs in tests"</span> }
+        </div>
+        <div class="knowledge-entry fragment">
+          { <span class="key">"type"</span>: <span class="string">"gotcha"</span>, <span class="key">"fact"</span>: <span class="string">"This API returns 200 even on errors"</span> }
+        </div>
+        <div class="knowledge-entry fragment">
+          { <span class="key">"type"</span>: <span class="string">"decision"</span>, <span class="key">"fact"</span>: <span class="string">"Use repository pattern for data access"</span> }
+        </div>
+        <p class="fragment" style="text-align: center; font-size: 0.65em; color: rgba(224, 224, 224, 0.55); margin-top: 1.2em;">
+          Every PR teaches the system something new. Git-native, version-controlled.
+        </p>
+        <aside class="notes">
+          The knowledge base lives in git as JSONL files. Agents prime from it before each task. So that gotcha you hit last week? The agents already know about it.
+        </aside>
+      </section>
+
+      <!-- Slide 10: Transition to Hands-On -->
+      <section class="title-slide">
+        <p style="font-size: 1.8em; font-weight: 600; color: var(--heading);">Let&rsquo;s build something together.</p>
+        <p style="font-size: 1em; color: rgba(224, 224, 224, 0.6); margin-top: 0.5em;">Open your laptops.</p>
+        <aside class="notes">
+          Okay, enough slides. Let's actually do this. If you have Claude Code and a project, you're about to see what this can do.
+        </aside>
+      </section>
+
+      <!-- ================================================================
+           ACT III — Let's Build Together
+           ================================================================ -->
+
+      <!-- Slide 11: Prerequisites -->
+      <section>
+        <h2>Prerequisites</h2>
+        <ul class="prereq-list">
+          <li class="fragment">Claude Code, Codex CLI, or Gemini CLI</li>
+          <li class="fragment">Node.js 18+ &nbsp;<code>node --version</code></li>
+          <li class="fragment">GitHub CLI &nbsp;<code>gh --version</code></li>
+          <li class="fragment">A project &mdash; new or existing</li>
+        </ul>
+        <aside class="notes">
+          Quick check — you need at least one AI CLI tool: Claude Code, OpenAI's Codex CLI, or Google's Gemini CLI. Plus Node.js and the GitHub CLI. If you're missing anything, pair up with someone who has it.
+        </aside>
+      </section>
+
+      <!-- Slide 12: Install -->
+      <section>
+        <h2>Install</h2>
+        <div class="terminal-block">
+          <div class="terminal-header">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+          </div>
+          <div class="terminal-body" style="text-align: left;">
+            <span class="command">$ claude plugin marketplace add dsifry/metaswarm-marketplace</span><br>
+            <span class="command">$ claude plugin install metaswarm</span>
+          </div>
+        </div>
+        <div class="terminal-block" style="margin-top: 0.8em;">
+          <div class="terminal-header">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+          </div>
+          <div class="terminal-body" style="text-align: left;">
+            <span class="command">$ claude</span>
+            <span class="claude-prompt"><br>&gt; /metaswarm:setup</span>
+          </div>
+        </div>
+        <div style="margin-top: 0.8em;">
+          <span class="output-line fragment claude-action">Detecting project: TypeScript, Next.js, Vitest&hellip;</span>
+          <span class="output-line fragment claude-action">Configuring coverage thresholds&hellip;</span>
+          <span class="output-line fragment claude-action">Writing CLAUDE.md, commands, and profile&hellip;</span>
+          <span class="output-line fragment claude-action claude-done"><span class="accent">&#10003;</span> metaswarm configured &mdash; run /start-task to begin</span>
+        </div>
+        <p class="fragment" style="text-align: center; font-size: 0.6em; color: rgba(224, 224, 224, 0.5); margin-top: 1em;">Or just tell Claude: <em>&ldquo;Read through github.com/dsifry/metaswarm and install it for my project.&rdquo;</em></p>
+        <aside class="notes">
+          Two shell commands to add the marketplace and install the plugin. Then open Claude Code and run /metaswarm:setup to configure your project. Or skip all that and just tell Claude to read the repo and install it.
+        </aside>
+      </section>
+
+      <!-- Slide 13: What /setup Configures -->
+      <section>
+        <h2>What /metaswarm:setup Configures</h2>
+        <div class="terminal-block">
+          <div class="terminal-header">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+          </div>
+          <div class="terminal-body">
+            <span class="tree-line">your-project/</span>
+            <span class="tree-line">&boxvr;&boxh;&boxh; CLAUDE.md                    <span class="accent">&larr; project instructions</span></span>
+            <span class="tree-line">&boxvr;&boxh;&boxh; .claude/commands/            <span class="accent">&larr; 6 slash commands</span></span>
+            <span class="tree-line">&boxvr;&boxh;&boxh; .coverage-thresholds.json    <span class="accent">&larr; coverage enforcement</span></span>
+            <span class="tree-line">&boxvr;&boxh;&boxh; .beads/knowledge/            <span class="accent">&larr; git-native knowledge base</span></span>
+            <span class="tree-line">&boxur;&boxh;&boxh; .metaswarm/</span>
+            <span class="tree-line">    &boxvr;&boxh;&boxh; project-profile.json     <span class="accent">&larr; detected stack &amp; config</span></span>
+            <span class="tree-line">    &boxur;&boxh;&boxh; external-tools.yaml      <span class="accent">&larr; Codex &amp; Gemini (optional)</span></span>
+          </div>
+        </div>
+        <p class="fragment" style="text-align: center; font-size: 0.65em; color: rgba(224, 224, 224, 0.55); margin-top: 1em;">Agents, skills, and rubrics live in the plugin &mdash; not in your repo.</p>
+        <aside class="notes">
+          Notice how little gets added to your repo. The agents, skills, and rubrics all live in the plugin — they're not scaffolded into your project. You just get the config files specific to your project: CLAUDE.md, slash commands, coverage thresholds, and a project profile.
+        </aside>
+      </section>
+
+      <!-- Slide 13b: Codex & Gemini -->
+      <section>
+        <h2>Codex &amp; Gemini Support</h2>
+        <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.2em; align-items: center; margin-top: 1em;">
+          <div class="terminal-block fragment">
+            <div class="terminal-header">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+            </div>
+            <div class="terminal-body" style="text-align: left; font-size: 0.55em;">
+              <span class="command">$ npm i -g @openai/codex</span><br>
+              <span class="command">$ npm i -g @google/gemini-cli</span>
+            </div>
+          </div>
+          <div class="fragment" style="font-size: 0.58em; text-align: left;">
+            <p style="color: var(--accent); font-weight: 600; margin-bottom: 0.3em;">Cross-model adversarial review</p>
+            <p style="color: rgba(224, 224, 224, 0.7); line-height: 1.5;">
+              Codex writes &rarr; Gemini+Claude review<br>
+              Gemini writes &rarr; Codex+Claude review<br>
+              <span style="color: rgba(224, 224, 224, 0.5);">Writer never reviews own output</span>
+            </p>
+          </div>
+        </div>
+        <div class="fragment" style="margin-top: 1em;">
+          <p style="font-size: 0.6em; color: rgba(224, 224, 224, 0.55); font-style: italic;">/metaswarm:setup asks if you want external tools. Routes to cheapest model with auto-escalation.</p>
+        </div>
+        <aside class="notes">
+          metaswarm optionally integrates with OpenAI's Codex CLI and Google's Gemini CLI. During setup, it asks if you want external tools. When enabled, the orchestrator routes implementation to the cheapest available model and uses cross-model adversarial review — the model that writes the code never reviews its own output. If one tool fails, it escalates through the chain.
+        </aside>
+      </section>
+
+      <!-- Slide 14: Your First Task -->
+      <section>
+        <h2>Try It</h2>
+        <div style="margin: 1.5em 0;">
+          <div class="terminal-block fragment">
+            <div class="terminal-header">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+            </div>
+            <div class="terminal-body" style="text-align: left; font-size: 0.8em;">
+              <span class="command">/start-task</span> Add a webhook system that lets users register callback URLs for events, with retry logic, signature verification, and a delivery log UI.
+            </div>
+          </div>
+        </div>
+        <p class="fragment" style="font-size: 0.6em; color: rgba(224, 224, 224, 0.55); font-style: italic;">Pick something ambitious &mdash; multi-file features, new subsystems, complex refactors.</p>
+        <aside class="notes">
+          Just run /start-task and describe what you want in plain English. No issue required. Pick something with real complexity — a webhook system, a permissions layer, a reporting pipeline. Something that touches multiple files and needs real architecture. Then watch what happens.
+        </aside>
+      </section>
+
+      <!-- Slide 15: Watch the Workflow -->
+      <section>
+        <h2>Watch the Workflow</h2>
+        <div class="workflow-sequence">
+          <div class="workflow-step fragment">
+            <span class="workflow-agent">Researcher</span> explores codebase
+          </div>
+          <div class="workflow-step fragment">
+            <span class="workflow-agent">Architect</span> creates plan
+          </div>
+          <div class="workflow-step fragment">
+            <span class="workflow-agent">Reviewers</span> validate plan
+          </div>
+          <div class="workflow-step fragment">
+            <span class="workflow-agent">Coder</span> implements with TDD
+          </div>
+          <div class="workflow-step fragment">
+            <span class="workflow-agent">PR</span> gets created
+          </div>
+          <div class="workflow-step fragment">
+            <span class="workflow-agent">Shepherd</span> monitors to merge
+          </div>
+        </div>
+        <aside class="notes">
+          Now watch. The researcher explores your codebase first. The architect creates a structured plan. Reviewers validate it — both the plan review gate and the design review gate. Then the coder implements using TDD with adversarial review. A PR gets created automatically. And the PR shepherd monitors it all the way to merge.
+        </aside>
+      </section>
+
+      <!-- Slide 16: Testing -->
+      <section>
+        <h2>Testing Is Non-Negotiable</h2>
+        <div class="two-col" style="margin-top: 1.2em;">
+          <div>
+            <p style="font-size: 0.7em; color: rgba(224, 224, 224, 0.55); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.6em;">What metaswarm enforces</p>
+            <div class="workflow-sequence">
+              <div class="workflow-step fragment">
+                <span class="workflow-agent">TDD</span> &mdash; tests written before code
+              </div>
+              <div class="workflow-step fragment">
+                <span class="workflow-agent">Coverage gates</span> &mdash; configured in <code>.coverage-thresholds.json</code>
+              </div>
+              <div class="workflow-step fragment">
+                <span class="workflow-agent">Independent verification</span> &mdash; orchestrator runs tests itself
+              </div>
+              <div class="workflow-step fragment">
+                <span class="workflow-agent">Blocking</span> &mdash; no PR until thresholds pass
+              </div>
+            </div>
+          </div>
+          <div class="fragment">
+            <p style="font-size: 0.7em; color: rgba(224, 224, 224, 0.55); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.6em;">What you configure</p>
+            <div class="terminal-block">
+              <div class="terminal-header">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+              </div>
+              <div class="terminal-body" style="font-size: 0.75em; text-align: left; line-height: 1.7;">
+                <span style="color: rgba(224, 224, 224, 0.45);">// .coverage-thresholds.json</span><br>
+                {<br>
+                &nbsp;&nbsp;"lines": 100,<br>
+                &nbsp;&nbsp;"branches": 100,<br>
+                &nbsp;&nbsp;"functions": 100,<br>
+                &nbsp;&nbsp;"statements": 100<br>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+        <aside class="notes">
+          Testing is not optional in metaswarm — it's enforced. TDD is mandatory: tests are written before implementation code. Coverage thresholds are defined in a config file and the orchestrator checks them independently — it doesn't trust the agent's self-report. If thresholds aren't met, the PR simply doesn't get created. You set the bar, metaswarm holds it.
+        </aside>
+      </section>
+
+      <!-- Slide 17: Code Review & PR Shepherd -->
+      <section>
+        <h2>Code Review &amp; PR Shepherd</h2>
+        <p class="fragment" style="font-size: 0.75em; color: rgba(224, 224, 224, 0.7); margin-bottom: 1em;">
+          metaswarm works alongside your existing review tools
+        </p>
+        <div class="review-tools fragment" style="display: flex; justify-content: center; gap: 1.8em; margin-bottom: 1.5em;">
+          <span class="review-tool-badge">CodeRabbit</span>
+          <span class="review-tool-badge">Greptile</span>
+          <span class="review-tool-badge">BugBot</span>
+          <span class="review-tool-badge">RepoFortify</span>
+        </div>
+        <div class="fragment" style="margin-top: 0.8em;">
+          <p style="font-size: 0.7em; color: rgba(224, 224, 224, 0.55); margin-bottom: 0.6em;">When reviews come in, hand them back to metaswarm:</p>
+          <div class="terminal-block">
+            <div class="terminal-header">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+            </div>
+            <div class="terminal-body" style="text-align: left; line-height: 1.8;">
+              <span class="command">/pr-shepherd &lt;pr-number&gt;</span><br>
+              <span style="color: rgba(224, 224, 224, 0.4); font-size: 0.85em;">Monitors PR &rarr; addresses review comments &rarr; pushes fixes &rarr; repeats until merged</span>
+            </div>
+          </div>
+        </div>
+        <div class="workflow-sequence fragment" style="margin-top: 1.2em;">
+          <div class="workflow-step">
+            <span class="workflow-agent">PR created</span> by metaswarm
+          </div>
+          <div class="workflow-step">
+            <span class="workflow-agent">Review bots</span> post comments &amp; suggestions
+          </div>
+          <div class="workflow-step">
+            <span class="workflow-agent">PR Shepherd</span> reads feedback, pushes fixes
+          </div>
+          <div class="workflow-step">
+            <span class="workflow-agent">Repeat</span> until approved &amp; merged
+          </div>
+        </div>
+        <aside class="notes">
+          metaswarm doesn't replace your code review tools — it works with them. Tools like CodeRabbit, Greptile, BugBot, and RepoFortify post comments on your PRs as usual. Then you run /pr-shepherd with the PR number. The shepherd reads all the review comments, addresses them, pushes fixes, and keeps going until the PR is approved and merged. It's the full loop — from task to merged code — with your existing quality tools in the pipeline.
+        </aside>
+      </section>
+
+      <!-- Slide 18: Resources & Q&A -->
+      <section class="title-slide">
+        <p style="font-size: 1.2em; color: var(--accent); font-family: 'JetBrains Mono', 'Menlo', monospace; font-weight: 600; margin-bottom: 0.3em;">github.com/dsifry/metaswarm</p>
+        <p style="font-size: 0.8em; color: rgba(224, 224, 224, 0.6);">Star it. Clone it. File issues.</p>
+        <p style="font-size: 2.2em; font-weight: 700; color: var(--heading); margin-top: 1.2em;">Questions?</p>
+        <aside class="notes">
+          The repo is open source, MIT licensed. Star it, clone it, file issues. I'm happy to take questions — about the tool, the workflow, how I use it day to day, anything.
+        </aside>
+      </section>
+
+    </div><!-- /.slides -->
+  </div><!-- /.reveal -->
+
+  <!-- Reveal.js -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.js"></script>
+  <!-- Plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/notes/notes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/highlight/highlight.js"></script>
+
+  <script>
+    Reveal.initialize({
+      hash: true,
+      transition: 'fade',
+      controlsTutorial: false,
+      slideNumber: true,
+      plugins: [RevealNotes, RevealHighlight]
+    });
+  </script>
+</body>
+</html>
